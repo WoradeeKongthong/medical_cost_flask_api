@@ -6,7 +6,12 @@ import pandas as pd
 import numpy as np
 
 app = Flask(__name__)
-#model = pickle.load(open('SVRmodel.p','rb'))
+
+modelfile = 'models/SVRmodel.p'
+data = pickle.load(open(modelfile, 'rb'))
+y_scaler = data['y_scaler']
+model = data['model']
+
 
 @app.route('/predict/', methods=['GET','POST'])
 def predict():
@@ -26,9 +31,5 @@ def predict():
 	return response
 
 
-if __name__ == '__main__':
-	modelfile = 'models/SVRmodel.p'
-	data = pickle.load(open(modelfile, 'rb'))
-	y_scaler = data['y_scaler']
-	model = data['model'] 
+if __name__ == '__main__': 
 	app.run(debug=True)
