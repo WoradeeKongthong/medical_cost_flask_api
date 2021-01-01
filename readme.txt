@@ -3,7 +3,8 @@
 1. start flask api
     $ python app.py
 2. test the api 
-  2.1 from terminal using curl (with the input data)
+  2.1 from terminal using curl (with the input data)  
+    where the data list is [age,sex,bmi,children,smoker,region]  
     $ curl -X POST http://0.0.0.0:5000/predict/ -H "Content-Type: application/json" -d '[35,"female",35,3,"yes","southwest"]'
   2.2 from testapi.py file
     adjust your input in the file first, then run the file on terminal
