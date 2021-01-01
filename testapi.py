@@ -3,7 +3,7 @@ import json
 
 url = 'http://0.0.0.0:5000/predict/'
 
-
+# input data is the list of [age,sex,bmi,children,smoker,region]
 x = [35,'female',35,3,'yes','southwest']
 
 
